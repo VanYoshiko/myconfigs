@@ -1,0 +1,10 @@
+*.token
+*.secret
+*.log
+*.tm*.log
+.DS_Store
+
+configs/.ssh/
+*.key
+*.pem
+*.cert
