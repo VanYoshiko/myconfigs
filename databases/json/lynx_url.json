@@ -1,0 +1,16 @@
+{
+"vim_help":{
+	"reference":"https://vimhelp.org/#reference_toc"},
+	"linux_man_pages":{
+		"man-pages":"https://www.man7.org/linux/man-pages/index.html",
+		"Regular_expressions_commands":"https://www.gnu.org/software/grep/manual/html_node/Character-Classes-and-Bracket-Expressions.html",
+		"grep":"http://www.gnu.org/software/grep/manual/html_node/Character-Classes-and-Bracket-Expressions.html",
+		"ed":"https://www.gnu.org/software/ed/manual/ed_manual.html"},
+		"git":{
+			"gitignore":"https://git-scm.com/docs/gitignore"}
+}
+
+{
+"Forums":{
+	"How to run a .awk file?":"https://stackoverflow.com/questions/9991859/how-to-run-a-awk-file"}
+}
