@@ -1,6 +1,5 @@
 export PS1='\[\e[1;30;47m\][\W]\[\e[0m\]\[\e[1;31m\]\$\[\e[0m\] '
 
-echo "export LANG=en_US.UFT-8"
 
 # Alias{{{
 alias ib='internalbrowser' 
@@ -25,4 +24,9 @@ alias gl='git log --oneline'
 alias gb='git checkout -b'
 alias gd='git diff'
 #}}}#}}}
+
+man() {
+		lynx https://www.man7.org/linux/man-pages/
+}
+
 
