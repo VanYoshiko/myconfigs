@@ -1,0 +1,9 @@
+{
+"Ish apk install manager":{
+"sqlite":"apk install sqlite3",
+"lynx":"apk install lynx",
+"git":"apk install git",
+"python":"apk install python3",
+"vim":"apk install vim",
+"jq":"apk install jq"}
+}

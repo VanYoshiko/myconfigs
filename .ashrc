@@ -1,0 +1,30 @@
+export HISTFILE=~/.ash_history
+export PS1='\[\e[1;30;47m\][\W]\[\e[0m\]\[\e[1;31m\]\$\[\e[0m\] '
+
+
+# Alias{{{
+alias vscode='https://bug-free-broccoli-g456pwrg4rx53vxg7.github.dev/'
+alias jupyter='https://bug-free-broccoli-g456pwrg4rx53vxg7.github.dev/?editor=jupyter'
+alias tree='tree --dirsfirst -F'
+alias h='history'
+alias ..="cd .."
+alias mkdir="mkdir -pv"
+alias ls="ls -lahi"
+alias la="ls -A"
+alias cp='cp -v'
+alias rm='rm -v'
+alias mv='mv -v'
+
+#{{{ git
+alias git='git'
+alias ga='git add'
+alias gaa='git add --all'
+alias gc='git commit'
+alias gl='git log --oneline'
+alias gb='git checkout -b'
+alias gd='git diff'
+#}}}#}}}
+
+man() {
+			lynx https://www.man7.org/linux/man-pages/
+}

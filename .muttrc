@@ -1,0 +1,16 @@
+iCloud IMAP
+set imap_user = "khorihenry@icloud.com"
+set imap_pass = "m@yd@y77"  # See Note 1 below
+set from = "khorihenry@icloud.com"
+set realname = "Khori Henry"
+
+# Server settings (iCloud IMAP/SMTP)
+set smtp_url = "smtps://$imap_user@smtp.mail.me.com:587"
+set smtp_pass = "$imap_pass"
+set ssl_force_tls = yes
+
+# IMAP settings
+set folder = "imaps://imap.mail.me.com:993"
+set spoolfile = "+INBOX"
+set record = "+Sent"
+set postponed = "+Drafts"

@@ -1,0 +1,233 @@
+lzopcat
+env
+(1=0))
+while : do
+(i < 5)
+echo St, ((24+));
+(1=0))
+((1=0))
+touch bash_script
+ed bash_script 
+echo "bash_script "
+bash_script
+./bash_script
+chmod +x bash_script 
+./bash_script
+cd -
+cd /mnt/sharedlocal/home/courses/
+tree
+ed tutorials/geekforgeeks.md
+ks
+ls
+ed geekforgeeks.md
+apt-sh­ow-­ver­sions -u
+for i in `cat names.txt`; do host -r $i [nameserver]; done
+ls
+for i in `geekforgeeks.md`; do host -r $i [nameserver]; done
+ping x.x.x.x 2>&1 | awk -F: '/sendto:/ {print $3}' | say
+du | sort -nr | head -100
+ip a
+ip route
+..
+cat awk_functions.html | pup 'h3:contains("split("), p:contains("Splits string into array") + pre code text{}'
+cat g4g_sample_html_dowmload.html  | pup 'h3:contains("split("), p:contains("Splits string into array") + pre code text{}'
+sed 's/<[^>]*>//g' g4g_sample_html_dowmload.html 
+vim g4g_sample_html_dowmload.html 
+tree
+rm -r courses/tutorials/iCloudDrive/
+tree
+rm -r courses/iCloudDrive/
+tree
+cat courses/html/linux.html 
+cd
+ls
+ls a
+ ls -a 
+cat bash_script
+./bash_script 
+ed bash_script 
+./bash_script 
+rename
+ls
+tree
+cd-
+cd -
+tree
+cd finance/
+sqlite financial.db
+sqlite3 financial.db
+cd -
+cd /mnt/sharedlocal/home/
+ls
+cd finance/
+sqlite3 financial.db
+cd -
+cd /mnt/sharedlocal/home/finance/
+sqlite3 financial.db
+cd /mnt/sharedlocal/home/finance/
+sqlite3 financial.db
+exit
+cd /mnt/sharedlocal/home/finance/
+sqlite3 financial.db
+cd -
+cd /mnt/sharedlocal/home/
+ls
+sqlite3 finance/financial.db 
+cd -
+cd /mnt/sharedlocal/home/
+sqlite3 finance/financial.db 
+q
+cd /mnt/sharedlocal/home/
+sqlite3 finance/financial.db 
+cd /mnt/sharedlocal/home/
+sqlite3 finance/financial.db 
+ed #!/bin/sh
+ed CHECK IF POSIX COMPLIANT.sh
+touch "CHECK IF POSIX COMPLIANT.sh"
+ed CHECK IF POSIX COMPLIANT.sh
+ed "CHECK IF POSIX COMPLIANT.sh"
+apk search python
+apk ?
+apk
+apk list
+apk list | awk -F " " '{print $1}'
+lbu
+cd -
+cd /mnt/sharedlocal/home/
+cd courses/linux/
+cut -c 5 cut.md
+cut -c 5 cut.md >> cut.md 
+cat cut.md 
+echo "NOTE:'cut' command not found in a-Shell" >> cut.md 
+cut -f 2 sample.txt
+cut -f 2 cut.md 
+ed cut.md 
+cut -f 2 cut.md 
+cut -f 1 cut.md 
+cut -f 1 -d ";" cut.md 
+h
+cd /mnt/sharedlocal/home/
+sqlite3 finance/financial.db 
+pop
+cd $HOME
+..
+ls
+ls usr
+ls usr | awk '{print $10}'
+ls $HOME | awk '{print $10}'
+cd $HOME
+cd ..
+ls | awk '{print $10}'
+ls usr | awk '{print $10}'
+ls usr/loacl/ | awk '{print $10}'
+ls usr/locqll/ | awk '{print $10}'
+ls usr/local/ | awk '{print $10}'
+ls usr/local/share | awk '{print $10}'
+ls $HOME
+ls $HOME | awk '{print $10}'
+ls .. | awk '{print $10}'
+ls ../usr/local/share/ | awk '{print $10}'
+ls $HOME | awk '{print $10}'
+cd
+ls $HOME
+tree /mnt
+cd $HOME | awk '{print $10}' 2>&1 deepseek_questiosns.txt
+touch deepseek_quesrions.txt
+ls $HOME | awk '{print $10}' 2>&1 deepseek_questiosns.txt
+rm deepseek_quesrions.txt
+touch deepseek_questions.txt
+ls $HOME | awk '{print $10}' 2>&1 deepseek_questions.txt
+less deepseek_questions.txt
+ls $HOME | awk '{print $10}' 2>&1 > deepseek_questions.txt
+less deepseek_questions.txt
+ls /mnt/sharedlocal/home/ | awk '{print $10}' 2>&1 > deepseek_questions.txt
+ls /mnt/sharedlocal/home/.local/share/ | awk '{print $10}' 2>&1 > deepseek_questions.txt
+less deepseek_questions.txt
+tree /mnt/sharedlocal/home/.local/ | awk '{print $10}' 2>&1 > deepseek_questions.txt
+less deepseek_questions.txt
+cat deepseek_questions.txt
+ls $HOME | awk '{print $10}' 2>&1 > deepseek_questions.txt
+ls /mnt/sharedlocal/home/ | awk '{print $10}' 2>&1 >> deepseek_questions.txt
+tree /mnt/sharedlocal/home/.local/ >> deepseek_questions.txt 
+less deepseek_questions.txt
+cat deepseek_questions.txt
+open https://www.google
+open https://www.google.com
+apk search zarhura
+apk search python
+[~irok]$ ./view_helps.sh 
+===============================================
+ VIEW DOCS 
+===============================================
+        awk_builtin_functions.pdf
+        syllabus        sql_syllabus.pdf
+        syllabus        java_syllabus.pdf
+        bash_reference_manual.pdf
+        cheatsheet      posix_cheatsheet.pdf
+        cheatsheet      git_cheatsheet.pdf
+        cheatsheet      ed_cheatsheet.pdf
+        cheatsheet      sqlite_ducmentattion.pd
+f
+        cheatsheet      cli_kung-fu_cheatsheet.
+pdf
+        cheatsheet      devops_cheeatsheet.pdf
+        cheatsheet      javascript_cheatsheet.p
+df
+        cheatsheet      html_cheatsheet.pdf
+        cheatsheet      vscode_cheatsheet.pdf
+        cheatsheet      vim_cheatsheet.pdf
+segmentation fault
+===============================================
+./view_helps.sh: 11: Syntax error: Unterminated
+ quoted string
+[~irok]$ 
+apk search zathura
+apk add zathura-pdf-mupdf-0.3.6-r1
+zathura /mnt/sharedlocal/home/.local/share/images/pdf/awk_builtin_functions.pdf 
+cd /mnt/sharedlocal/home/
+ls
+cat view_helps.sh 
+cd /mnt/sharedlocal/home/
+cd /mnt/sharedlocal/home/finance/
+sqlite3 financial.db 
+cd /mnt/sharedlocal/home/finance/
+sqlite3 financial.db 
+ls
+./bash_script 
+cat bash_script 
+touch posix_sample loop.sh
+chmod +x posix_sample 
+ed posix_sample 
+./posix_sample 
+cat posix_sample 
+ed posix_sample 
+./posix_sample 
+ed posix_sample 
+./posix_sample 
+mv posix_sample posix_sample.sh
+./posix_sample 
+cd /mnt/sharedlocal/home/
+la
+cd
+ls
+cd -
+./view_helps2
+./view_helps2.sh 
+chmod +x view_helps2.sh 
+ls
+./view_helps2.sh 
+ls .local/share/images/
+tree
+tree .local/share/images/
+tree .local
+tree .local/share/webarchive/
+view .local/share/webarchive/
+open .local/share/webarchive/cheatsheets/vim_scripting_cheatsheet.webarchive 
+cat view_helps2.sh 
+ls
+mv view_helps2.sh cheats.sh
+ls .local/
+ls .local/bin/
+mv cheats.sh .local/bin/
+cheats.sh
+pwd

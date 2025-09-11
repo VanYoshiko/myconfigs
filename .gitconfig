@@ -1,0 +1,5 @@
+[user]
+	email = khorihenry@hotmail.com
+	name = VanYoshiko
+[core]
+	sshCommand = "ssh -i ~/Documents/.ssh/id_ed25519 -F /dev/null"
