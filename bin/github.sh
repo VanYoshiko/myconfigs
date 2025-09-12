@@ -67,17 +67,25 @@
 # chmod 700 ~/.ssh >/dev/null
 # echo "======================================="
  
-echo "======================================="
+echo "=Pulling from remote...================"
 # git branch --set-upstream-to=origin/master master
 pull_output=$(git pull origin main 2>&1)
 git pull origin main 
 exit_code=$?
 echo "->Exit code: $exit_code"
-if [ $exit_code -eq 128 ]; then
-	echo "-->Fixing dubious ownership..."
+if [ $exit_code -gt 1 ]; then
+	if echo "$pull_output" | grep -q "dubious ownership"; then
 	git config --global --add safe.directory /mnt/sharedlocal/irok
 	echo "--->Retrying git pull..."
 	git pull origin main
+	fi
+elif [ $exit_code -eq 1 ]; then
+	 if echo "$pull_output" | grep -q "Pulling without specifying how to reconcile"; then
+		echo "->Configuring pull stratergy..."
+		git config pull.rebase false
+	   git pull origin main --allow-unrelated-histories
+	fi
+	
 else
 	echo "->Error:$pull_output"
 	echo "->Unknown git error. Manual intervention required"
@@ -86,6 +94,15 @@ fi
 
 echo "=Add files...=========================="
 git add .
+add_output=$(git add . 2>&1)
+exit_code=$?
+if [ $exit_code -eq 0 ]; then
+	if echo "$add_output" | grep -q "adding embedded git repository"; then
+		echo "->Embedded repo warning detected"
+	fi
+elif [ $exit_code -eq 1 ]; then 
+	echo "->git add failed completely"
+fi
 echo "=Committing files...==================="
 git commit -m "Commits"
 # echo "=Adding origin...======================"
