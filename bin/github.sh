@@ -24,18 +24,22 @@ fi
 		git config pull.rebase false
 	   git pull origin main --allow-unrelated-histories
 	return 1
-	fi
-	if echo "$outpit" | grep -q "non-fast-forward"; then
+	elif echo "$outpit" | grep -q "non-fast-forward"; then
 		echo "DEBUG: Handling non-fast forward error...
 	git pull origin main --allow-unrelated-history"
 	return 1
-	fi
-		if echo "$output" | grep -q "rejected"; then
+		elif echo "$output" | grep -q "rejected"; then
 		echo "DEBUG: force push..."
 		git push --force origin main
 		return 1
-		fi
-		;;
+		elif echo "$output" | grep -q "no upstream branch"; then
+			echo "DEBUG: Setting upstre branchm"
+			git restore .
+			git commit -m "Restoring files first before  pushing upstream..."
+			git push --set-upstream origin main
+			return 1
+	fi
+			;;
 	*)
 	echo "Unhandled error"
 	exit $exit_code
@@ -59,7 +63,7 @@ esac
 # email = khorihenry@hotmail.com
 # name = VanYoshiko
 # [core]
-# sshCommand = "ssh -i ~/.ssh/id_ed25519 -F /dev/null"
+# sshCommand = "ssh push --set-upstream origin main -i ~/.ssh/id_ed25519 -F /dev/null"
 # EOF
 
 # echo "======================================="
