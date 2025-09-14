@@ -1,2 +1,9 @@
+<<<<<<< HEAD
 /repo/
 /.ssh/
+=======
+/images
+financial.db
+financial_db.csv
+/gantt
+>>>>>>> cd18340303c0ba5d23dfd2b81354b4c6d62d474d
