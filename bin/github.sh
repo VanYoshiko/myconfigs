@@ -29,10 +29,17 @@ fi
 	echo "Unhandled error"
 	exit $exit_code
 	;;	
+	1)
+	if echo "$outpit" | grep -q "non-fast-forward"; then
+		echo "DEBUG: Handling non-fast forward error...
+	git pull origin main --allow-unrelated-history"
+	return 1
+	fi
+	;;
 esac
 }
 
-# echo "📄 Creating .ssh/config..." 
+# echo "INFO: Creating .ssh/config..." 
 # mkdir -p ~/.ssh 
 # cat > ~/.ssh/config <<EOF
 # Host github.com
@@ -42,7 +49,7 @@ esac
 # IdentitiesOnly yes
 # EOF
 # 
-# echo "📄 Creating .gitconfig..." 
+# echo "INFO: Creating .gitconfig..." 
 # cat > ~/.gitconfig <<EOF
 # [user]
 # email = khorihenry@hotmail.com
@@ -53,7 +60,7 @@ esac
 
 # echo "======================================="
 # echo "# myconfigs" >> README.md
-# echo "Initiating repo"
+# echo "INFO: Initiating repo"
 # if ! git init .; then
 # Using 'master' as the name for the initial branch. This default branch name is subject to change. To configure the initial branch name to use in all of your new repositories, which will suppress this warning, call:
 # echo "INFO: Using master branch"
