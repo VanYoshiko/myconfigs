@@ -13,29 +13,33 @@ echo "Output: $output"
 case $exit_code in
 	128)
 if echo "$pull_output" | grep -q "dubious ownership"; then
+	echo "DEBUG: Adding to safe.directory..."
 	git config --global --add safe.directory /mnt/sharedlocal/irok
 	return 1
 fi
 	;;
 	1)
 	if echo "$pull_output" | grep -q "Pulling without specifying how to reconcile"; then
-		echo "INFO: Configuring pull stratergy..."
+		echo "DEBUG: Configuring pull stratergy..."
 		git config pull.rebase false
 	   git pull origin main --allow-unrelated-histories
 	return 1
 	fi
-	;;
-	*)
-	echo "Unhandled error"
-	exit $exit_code
-	;;	
-	1)
 	if echo "$outpit" | grep -q "non-fast-forward"; then
 		echo "DEBUG: Handling non-fast forward error...
 	git pull origin main --allow-unrelated-history"
 	return 1
 	fi
-	;;
+		if echo "$output" | grep -q "rejected"; then
+		echo "DEBUG: force push..."
+		git push --force origin main
+		return 1
+		fi
+		;;
+	*)
+	echo "Unhandled error"
+	exit $exit_code
+	;;	
 esac
 }
 
@@ -127,4 +131,4 @@ git commit -m "Commits"
 # echo "=Adding origin...======================"
 # git remote add origin git@github.com:VanYoshiko/myconfigs.git
 echo "=Pushing to remote...=================="
-git push origin main
+push_output=$(git push origin main 2>&1) || handle_errors "git push" "$push_output"
