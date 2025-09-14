@@ -4,47 +4,47 @@ set -e
 exec 2> err_log.txt
 
 handle_errors() {
-local exit_code=$?
-local command=$1
-local output=$2
-echo "ERROR: Command failed: $command"
-echo "Exit code: $exit_code"
-echo "Output: $output"
-case $exit_code in
-	128)
-if echo "$pull_output" | grep -q "dubious ownership"; then
-	echo "DEBUG: Adding to safe.directory..."
-	git config --global --add safe.directory /mnt/sharedlocal/irok
-	return 1
-fi
-	;;
-	1)
-	if echo "$pull_output" | grep -q "Pulling without specifying how to reconcile"; then
-		echo "DEBUG: Configuring pull stratergy..."
-		git config pull.rebase false
-	   git pull origin main --allow-unrelated-histories
-	return 1
-	elif echo "$outpit" | grep -q "non-fast-forward"; then
-		echo "DEBUG: Handling non-fast forward error...
-	git pull origin main --allow-unrelated-history"
-	return 1
-		elif echo "$output" | grep -q "rejected"; then
-		echo "DEBUG: force push..."
-		git push --force origin main
-		return 1
-		elif echo "$output" | grep -q "no upstream branch"; then
-			echo "DEBUG: Setting upstre branchm"
-			git restore .
-			git commit -m "Restoring files first before  pushing upstream..."
-			git push --set-upstream origin main
-			return 1
-	fi
+	local exit_code=$?
+	local command=$1
+	local output=$2
+	echo "ERROR: Command failed: $command"
+	echo "Exit code: $exit_code"
+	echo "Output: $output"
+	case $exit_code in
+		128)
+			if echo "output" | grep -q "dubious ownership"; then
+				echo "DEBUG: Adding to safe.directory..."
+				git config --global --add safe.directory /mnt/sharedlocal/irok
+				return 1
+			fi
 			;;
-	*)
-	echo "Unhandled error"
-	exit $exit_code
-	;;	
-esac
+		1)
+			if echo "output" | grep -q "Pulling without specifying how to reconcile"; then
+				echo "DEBUG: Configuring pull stratergy..."
+				git config pull.rebase false
+				git pull origin main --allow-unrelated-histories
+				return 1
+			elif echo "outpit" | grep -q "non-fast-forward"; then
+				echo "DEBUG: Handling non-fast forward error...
+				git pull origin main --allow-unrelated-history"
+				return 1
+			elif echo "output" | grep -q "rejected"; then
+				echo "DEBUG: force push..."
+				git push --force origin main
+				return 1
+			elif echo "output" | grep -q "no upstream branch"; then
+				echo "DEBUG: Setting upstream branchm"
+				git restore .
+				git commit -m "Restoring files first before  pushing upstream..."
+				git push --set-upstream origin main
+				return 1
+			fi
+			;;
+		*)
+			echo "Unhandled error"
+			exit $exit_code
+			;;	
+	esac
 }
 
 # echo "INFO: Creating .ssh/config..." 
@@ -116,23 +116,30 @@ esac
 # 	echo "->INFO: Tokens already exists!"
 # fi
 # echo "======================================="
- 
+
 echo "=Pulling from remote...================"
-pull_output=$(git pull origin main 2>&1) || handle_errors "git pull" "$pull_output"
-echo "=Add files...=========================="
-git add .
-add_output=$(git add . 2>&1)
-exit_code=$?
-if [ $exit_code -eq 0 ]; then
-	if echo "$add_output" | grep -q "adding embedded git repository"; then
-		echo "WARN: Embedded repo detected"
-	fi
-elif [ $exit_code -eq 1 ]; then 
-	echo "ERROR: Failed to add files"
+if pull_output=$(git pull origin main 2>&1); then
+	echo "✅ Successfully pulled from remote!"
+else
+	handle_errors "git pull" "$pull_output"
 fi
+
+echo "=Add files...=========================="
+if add_output=$(git add . 2>&1); then
+	echo "✅ Files added for commit!"
+else
+	echo "DEBUG: Failed to add files"
+	handle_errors "git add." "$add_output"
+fi
+
 echo "=Committing files...==================="
 git commit -m "Commits"
 # echo "=Adding origin...======================"
 # git remote add origin git@github.com:VanYoshiko/myconfigs.git
 echo "=Pushing to remote...=================="
-push_output=$(git push origin main 2>&1) || handle_errors "git push" "$push_output"
+if push_output=$(git push origin main 2>&1); then
+	echo "INFO: ✅ Successfully pushed files!\n Latest commit:$(git log --oneline -1)"
+else
+	handle_errors "git push" "$push_output"
+fi
+
